@@ -1,7 +1,7 @@
 #Use java,tomcat,maven,spring mcv
 
 ## Usage:
-### 1、mvn clean package
+### 1、maven make war package,deploy tomcat
 ### 2，config your zookeeper address by modify spring.properties
 
 ## Screenshot:
