@@ -1,6 +1,4 @@
-# zookeeper-browser
-
-#use java,tomcat,maven,spring mcv 
+#use java,tomcat,maven,spring mcv
 
 ## usage:
 ### 1、mvn clean package
