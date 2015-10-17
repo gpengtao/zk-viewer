@@ -29,7 +29,7 @@ public class ZkViewController {
         if (Strings.isNullOrEmpty(path)) {
             path = "/";
         }
-        logger.info("查看path {}", path);
+        logger.info("view path {}", path);
 
         ModelAndView modelAndView = new ModelAndView("view");
 
@@ -37,7 +37,7 @@ public class ZkViewController {
             ZkViewModel view = zkService.view(path);
             modelAndView.addObject("view", view);
         } catch (Throwable e) {
-            logger.error("查看异常", e);
+            logger.error("view error", e);
             modelAndView.addObject("errMsg", e);
         }
 
