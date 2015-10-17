@@ -31,7 +31,7 @@ public class ZkService {
 
     public ZkViewModel view(String path) throws Exception {
 
-        Map<String, String> childPathMap = getChildPathMap(path);
+        Map<String, String> childPathMap = getChildNameAndPathMap(path);
 
         String data;
         byte[] dataByte = zooKeeper.getData(path, false, null);
@@ -59,7 +59,7 @@ public class ZkService {
         return path.substring(0, last);
     }
 
-    private Map<String, String> getChildPathMap(String path) throws Exception {
+    private Map<String, String> getChildNameAndPathMap(String path) throws Exception {
         List<String> children = zooKeeper.getChildren(path, false);
         Map<String, String> childPathMap = Maps.newLinkedHashMap();
         for (String one : children) {

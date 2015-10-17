@@ -3,13 +3,13 @@
 
 <html>
 <head>
-    <title>view zk</title>
+    <title>zk-viewer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<h1>zookeeper browser</h1>
+<h1>zookeeper viewer</h1>
 
 <c:if test="${errMsg != null}">
     <h3>
@@ -23,7 +23,7 @@
 
     <h2>data : ${view.data}</h2>
 
-    <a class="btn btn-block btn-info" type="button" href="/browse/view?path=${view.parentPath}">up</a>
+    <a class="btn btn-block btn-info" type="button" href="/zk-view/?path=${view.parentPath}">up</a>
 
     <table class="table table-striped">
         <thead>
@@ -39,7 +39,7 @@
                 <td>${status.count}</td>
                 <td>${entry.key}</td>
                 <td>
-                    <a class="btn btn-primary" type="button" href="/browse/view?path=${entry.value}">view</a>
+                    <a class="btn btn-primary" type="button" href="/zk-view/?path=${entry.value}">view</a>
                 </td>
             </tr>
         </c:forEach>

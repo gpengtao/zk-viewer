@@ -27,7 +27,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>spring-dispatcher</servlet-name>
-        <url-pattern>/browse/*</url-pattern>
+        <url-pattern>/zk-view/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
