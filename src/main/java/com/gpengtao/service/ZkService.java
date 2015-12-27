@@ -71,6 +71,10 @@ public class ZkService {
         return childPathMap;
     }
 
+    public String getZkAddress() {
+        return zkAddress;
+    }
+
     @PostConstruct
     public void initZK() throws IOException {
         zooKeeper = new ZooKeeper(zkAddress, 1000, new Watcher() {

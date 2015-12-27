@@ -9,7 +9,7 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<h1>zookeeper viewer</h1>
+<h1>zookeeper viewer, address ${zkAddress}</h1>
 
 <c:if test="${errMsg != null}">
     <h3>

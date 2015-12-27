@@ -32,6 +32,7 @@ public class ZkViewController {
         logger.info("view path {}", path);
 
         ModelAndView modelAndView = new ModelAndView("view");
+        modelAndView.addObject("zkAddress", zkService.getZkAddress());
 
         try {
             ZkViewModel view = zkService.view(path);
