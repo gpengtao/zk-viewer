@@ -9,19 +9,30 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<h1>zookeeper viewer, address ${zkAddress}</h1>
+<h2>zookeeper viewer, address ${zkAddress}</h2>
 
 <c:if test="${errMsg != null}">
-    <h3>
+    <h4>
         <span style="color: red; ">Error</span>
-    </h3>
+    </h4>
+
     <p>${errMsg}</p>
 </c:if>
 
 <c:if test="${errMsg == null}">
-    <h2>path : ${view.path} </h2>
+    <h4>path : ${view.path} </h4>
 
-    <h2>data : ${view.data}</h2>
+    <h4>data :</h4>
+
+    <c:if test="${view.data != null && view.data != ''}">
+        <script>
+            try {
+                document.write("<pre>" + JSON.stringify(${view.data}, null, "    ") + "</pre>");
+            } catch (err) {
+                document.write("<pre>" + '${view.data}' + "</pre>");
+            }
+        </script>
+    </c:if>
 
     <a class="btn btn-block btn-info" type="button" href="/zk-view/?path=${view.parentPath}">up</a>
 
