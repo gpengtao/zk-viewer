@@ -1,4 +1,4 @@
-package com.gpengtao.web.vo;
+package com.gpengtao.zkviewer.web.vo;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
