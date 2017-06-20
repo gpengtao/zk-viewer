@@ -14,13 +14,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan
 public class App {
 
-    @Bean
-    public ViewResolver internalResourceViewResolver(){
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/pages/");
-        viewResolver.setSuffix(".ftl");
-        return viewResolver;
-    }
+//    @Bean
+//    public ViewResolver internalResourceViewResolver(){
+//        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+//        viewResolver.setPrefix("/pages/");
+//        viewResolver.setSuffix(".ftl");
+//        return viewResolver;
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);

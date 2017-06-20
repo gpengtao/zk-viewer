@@ -29,7 +29,7 @@ public class ZkViewController {
         }
         logger.info("view path {}", path);
 
-        ModelAndView modelAndView = new ModelAndView("view");
+        ModelAndView modelAndView = new ModelAndView("zkView");
         modelAndView.addObject("zkAddress", zkService.getZkAddress());
 
         try {

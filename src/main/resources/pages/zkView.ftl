@@ -1,6 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <html>
 <head>
     <title>zk-viewer</title>
@@ -11,7 +8,7 @@
 <body>
 <h2>zookeeper viewer, address ${zkAddress}</h2>
 
-<#if errMsg != "">
+<#if errMsg??>
     <h4>
         <span style="color: red; ">Error</span>
     </h4>
