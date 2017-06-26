@@ -1,6 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <html>
 <head>
     <title>zk-viewer</title>
@@ -9,22 +6,19 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<h2>zookeeper viewer, address ${zkAddress}</h2>
+<h2>Address: ${zkAddress}</h2>
 
-<c:if test="${errMsg != null}">
+<#if errMsg??>
     <h4>
         <span style="color: red; ">Error</span>
     </h4>
-
     <p>${errMsg}</p>
-</c:if>
+<#else>
+    <h4>Path : ${view.path} </h4>
 
-<c:if test="${errMsg == null}">
-    <h4>path : ${view.path} </h4>
+    <h4>Data :</h4>
 
-    <h4>data :</h4>
-
-    <c:if test="${view.data != null && view.data != ''}">
+    <#if view.data != "">
         <script>
             try {
                 document.write("<pre>" + JSON.stringify(${view.data}, null, "    ") + "</pre>");
@@ -32,7 +26,7 @@
                 document.write("<pre>" + '${view.data}' + "</pre>");
             }
         </script>
-    </c:if>
+    </#if>
 
     <a class="btn btn-block btn-info" type="button" href="/zk-view/?path=${view.parentPath}">up</a>
 
@@ -45,18 +39,22 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${view.childrenPath}" var="entry" varStatus="status">
+
+        <#assign id=0>
+        <#list view.childrenPath ? keys as key>
+            <#assign id=id+1>
             <tr>
-                <td>${status.count}</td>
-                <td>${entry.key}</td>
+                <td>${id}</td>
+                <td>${key}</td>
                 <td>
-                    <a class="btn btn-primary" type="button" href="/zk-view/?path=${entry.value}">view</a>
+                    <a class="btn btn-primary" type="button" href="/zk-view/?path=${view.childrenPath[key]}">view</a>
                 </td>
             </tr>
-        </c:forEach>
+
+        </#list>
         </tbody>
     </table>
-</c:if>
+</#if>
 
 </body>
 <script src="http://code.jquery.com/jquery.js"/>

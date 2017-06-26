@@ -1,8 +1,8 @@
-package com.gpengtao.service;
+package com.gpengtao.zkviewer.service;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Maps;
-import com.gpengtao.web.vo.ZkViewModel;
+import com.gpengtao.zkviewer.web.vo.ZkViewModel;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
@@ -77,12 +77,12 @@ public class ZkService {
 
     @PostConstruct
     public void initZK() throws IOException {
-        zooKeeper = new ZooKeeper(zkAddress, 1000, new Watcher() {
+        zooKeeper = new ZooKeeper(zkAddress, 10000, new Watcher() {
             public void process(WatchedEvent event) {
 
             }
         });
-        logger.info("初始化zk完成：{}", zooKeeper);
+        logger.info("init zk ok：{}", zooKeeper);
     }
 
 }
