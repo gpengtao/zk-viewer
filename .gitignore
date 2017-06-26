@@ -34,3 +34,5 @@ Thumbs.db
 # *.tar.gz
 
 lib/
+
+logs/

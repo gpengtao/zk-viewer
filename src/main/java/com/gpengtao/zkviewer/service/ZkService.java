@@ -82,7 +82,7 @@ public class ZkService {
 
             }
         });
-        logger.info("初始化zk完成：{}", zooKeeper);
+        logger.info("init zk ok：{}", zooKeeper);
     }
 
 }
