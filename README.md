@@ -1,6 +1,6 @@
-#Use java, spring boot 
+View zookeeper data, using java, spring boot.
 
-## Usage:
+### Usage:
 #### 1、download release jar or manually `mvn clean package` source code
 #### 2、run the jar
 For example:
@@ -8,6 +8,7 @@ For example:
 
 server.port is http port, default is 8080 if not define.\
 zkAddress is your zookeeper address.
+
 
 ![like this](https://github.com/gpengtao/zookeeper-browser/blob/master/screen.png "")
 
