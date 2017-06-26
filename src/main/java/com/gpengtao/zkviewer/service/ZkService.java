@@ -77,7 +77,7 @@ public class ZkService {
 
     @PostConstruct
     public void initZK() throws IOException {
-        zooKeeper = new ZooKeeper(zkAddress, 1000, new Watcher() {
+        zooKeeper = new ZooKeeper(zkAddress, 10000, new Watcher() {
             public void process(WatchedEvent event) {
 
             }

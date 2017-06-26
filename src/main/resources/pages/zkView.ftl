@@ -6,7 +6,7 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<h2>zookeeper viewer, address ${zkAddress}</h2>
+<h2>Address: ${zkAddress}</h2>
 
 <#if errMsg??>
     <h4>
@@ -14,9 +14,9 @@
     </h4>
     <p>${errMsg}</p>
 <#else>
-    <h4>path : ${view.path} </h4>
+    <h4>Path : ${view.path} </h4>
 
-    <h4>data :</h4>
+    <h4>Data :</h4>
 
     <#if view.data != "">
         <script>
@@ -40,14 +40,17 @@
         </thead>
         <tbody>
 
+        <#assign id=0>
         <#list view.childrenPath ? keys as key>
+            <#assign id=id+1>
             <tr>
-                <td>#</td>
+                <td>${id}</td>
                 <td>${key}</td>
                 <td>
                     <a class="btn btn-primary" type="button" href="/zk-view/?path=${view.childrenPath[key]}">view</a>
                 </td>
             </tr>
+
         </#list>
         </tbody>
     </table>

@@ -22,7 +22,7 @@ public class ZkViewController {
     @Resource
     private ZkService zkService;
 
-    @RequestMapping("/")
+    @RequestMapping("/zk-view")
     public ModelAndView view(String path) {
         if (Strings.isNullOrEmpty(path)) {
             path = "/";
