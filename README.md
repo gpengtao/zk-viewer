@@ -4,7 +4,7 @@ View zookeeper data, using java, spring boot.
 #### 1、download release jar or manually `mvn clean package` source code
 #### 2、run the jar
 For example:
-`jar -jar zk-viewer-1.0.0.jar --server.port=8888 --zkAddress=10.0.0.1:2181,10.0.0.2:2181 &`
+`java -jar zk-viewer-1.0.0.jar --server.port=8888 --zkAddress=10.0.0.1:2181,10.0.0.2:2181 &`
 
 server.port is http port, default is 8080 if not define.\
 zkAddress is your zookeeper address.
